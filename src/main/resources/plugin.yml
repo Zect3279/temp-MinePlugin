@@ -1,0 +1,13 @@
+name: Sample
+version: ${project.version}
+main: cmo.zect.sample.SamplePlugin
+api-version: 1.16
+authors: [ Zect3279 ]
+
+commands: #自作プラグインのコマンドを宣言
+  sampleone:
+    description: this is 1st sample command.
+    usage: /<command>
+  sampletwo:
+    description: this is 2nd sample command.
+    usage: /<command>
