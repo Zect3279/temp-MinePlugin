@@ -7,7 +7,20 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class SamplePlugin extends JavaPlugin {
 
     @Override
+    public void onLoad() {
+        CommandAPI.onLoad(true); //Load with verbose output
+        
+        new CommandAPICommand("ping")
+            .executes((sender, args) -> {
+                sender.sendMessage("pong!");
+            })
+            .register();
+    }
+    
+    @Override
     public void onEnable() {
+        CommandAPI.onEnable(this);
+        
         // Plugin startup logic
         getLogger().info("プラグインが開始しました");
 
