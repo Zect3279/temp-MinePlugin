@@ -8,6 +8,8 @@ public final class SamplePlugin extends JavaPlugin {
 
     @Override
     public void onLoad() {
+        getLogger().info("onLoad is called");
+            
         CommandAPI.onLoad(true); //Load with verbose output
         
         new CommandAPICommand("ping")
@@ -22,14 +24,14 @@ public final class SamplePlugin extends JavaPlugin {
         CommandAPI.onEnable(this);
         
         // Plugin startup logic
-        getLogger().info("プラグインが開始しました");
+        getLogger().info("onEnable is called");
 
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-        getLogger().info("プラグインが停止しました");
+        getLogger().info("onDisable is called");
     }
 
     // onCommand は plugin.yml に記載されたコマンドが呼ばれた時に実行
